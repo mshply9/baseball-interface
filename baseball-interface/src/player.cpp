@@ -1,4 +1,8 @@
+#include <iostream>
 #include <string>
+#include <json.hpp>
+#include <cpprest/http_listener.h>
+#include <cpprest/json.h>
 
 class Player {
  protected:
@@ -13,6 +17,17 @@ class Player {
   Player(const std::string& name, const std::string& position, int number,
          const std::string& team, int age)
       : name(name), position(position), number(number), team(team), age(age) {}
+
+  // Convert to JSON
+  nlohmann::json toJson() const {
+    nlohmann::json json; 
+    json["name"] = name;
+    json["position"] = position;
+    json["number"] = number;
+    json["team"] = team;
+    json["age"] = age;
+    return json;
+  }
 
   // Getters
   std::string getName() { return name; }
@@ -31,19 +46,12 @@ class Player {
   // Get all info
   std::string getInfo() {
     return "Player Information:\n"
-           "Name: " +
-           name +
-           "\n"
-           "Position: " +
-           position +
-           "\n"
-           "Number: " +
-           std::to_string(number) +
-           "\n"
-           "Team: " +
-           team +
-           "\n"
-           "Age: " +
-           std::to_string(age) + "\n";
+           "Name: " + name + "\n"
+           "Position: " + position + "\n"
+           "Number: " + std::to_string(number) + "\n"
+           "Team: " + team + "\n"
+           "Age: " + std::to_string(age) + "\n";
   }
+
+  // 
 };

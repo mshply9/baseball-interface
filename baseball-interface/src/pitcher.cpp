@@ -134,37 +134,16 @@ class Pitcher : public Player {
   std::string getInfo() {
     return std::string(
         "Pitcher Information:\n"
-        "Name: " +
-        name +
-        "\n"
-        "Position: " +
-        position +
-        "\n"
-        "Number: " +
-        std::to_string(number) +
-        "\n"
-        "Team: " +
-        team +
-        "\n"
-        "Age: " +
-        std::to_string(age) +
-        "\n"
-        "ERA: " +
-        std::to_string(getEarnedRunAverage()) +
-        "\n"
-        "RA/9: " +
-        std::to_string(getRunsPerNine()) +
-        "\n"
-        "K/9: " +
-        std::to_string(getStrikeoutsPerNine()) +
-        "\n"
-        "BB/9: " +
-        std::to_string(getWalksPerNine()) +
-        "\n"
-        "FIP: " +
-        std::to_string(getFieldIndependentPitching()) +
-        "\n"
-        "WHIP: " +
-        std::to_string(getWalksAndHitsPerInningPitched()) + "\n");
+        "Name: " + name + "\n"
+        "Position: " + position + "\n"
+        "Number: " + std::to_string(number) + "\n"
+        "Team: " + team + "\n"
+        "Age: " + std::to_string(age) + "\n"
+        "ERA: " + std::to_string(getEarnedRunAverage()) + "\n"
+        "RA/9: " + std::to_string(getRunsPerNine()) + "\n"
+        "K/9: " + std::to_string(getStrikeoutsPerNine()) + "\n"
+        "BB/9: " + std::to_string(getWalksPerNine()) + "\n"
+        "FIP: " + std::to_string(getFieldIndependentPitching()) + "\n"
+        "WHIP: " + std::to_string(getWalksAndHitsPerInningPitched()) + "\n");
   }
 };
