@@ -53,5 +53,29 @@ class Player {
            "Age: " + std::to_string(age) + "\n";
   }
 
-  // 
+  // API 
+  void handleGet(web::http::http_request request) {
+    Player player("Bryce Harper", "First Base", 3 , "Phillies", 28);
+    auto response = json::value::parse(player.toJson().dump();)
+    request.reply(web::http::status_codes::OK, response);
+  }
+
+  int main() {
+    http_listener listener("http://localhost:5173/player");
+    listener.support(methods::GET, handle_get); 
+
+    try{
+      listener
+        .open()
+        .then([&listener](){std::cout << "Starting to listen\n"; })
+        .wait();
+
+        std::string line; 
+        std::getline(std::cin, line); 
+    }
+    catch (const std::exception& e) {
+      std::cerr << "Error: " << e.what() << std::endl;
+    }
+    return 0;
+  }
 };

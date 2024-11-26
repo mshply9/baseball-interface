@@ -5,7 +5,7 @@ function App() {
   const [player, setPlayer] = useState(null); 
 
   useEffect(() => {
-    fetch('http://localhost:3001/player')
+    fetch('http://localhost:5173/player')
       .then(response => response.json())
       .then(data => setPlayer(data))
       .catch(error => console.error('Error fetching player data:', error)); 
